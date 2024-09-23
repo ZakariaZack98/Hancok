@@ -1,0 +1,617 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200..700&display=swap");
+
+:root {
+  --clr-deepDark: #121212;
+  --clr-lessDark: #191919;
+  --clr-productBG: #212121;
+  --clr-textFaded: #666666;
+  --clr-accent: #ff4655;
+  --border-red: 1px solid red;
+  --trn-delay: linear 0.3s;
+  --box-shd: 0 0 20px 20px rgba(0, 0, 0, 0.24);
+  --text-regular: clamp(1rem, 1.1vw + 1px, 18px);
+  --text-large: clamp(1.1rem, 1.3vw + 1px, 20px);
+  --xxl-header: clamp(2.5rem, 3.3vw + 1px, 70px);
+  --xl-header: clamp(2.5rem, 2.5vw + 1px, 50px);
+  --l-header: clamp(1.5rem, 1.5vw + 1px, 30px);
+  --font-oswald: "Oswald", sans-serif;
+  --font-barlow: "Barlow Condensed", sans-serif;
+}* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+body {
+  font-family: "Oswald", sans-serif;
+  color: white;
+  background-color: var(--clr-deepDark);
+}
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+ol,
+ul,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+span {
+  display: inline-block;
+}
+img {
+  vertical-align: middle;
+}
+.ButtonRegular {
+  border: none;
+  padding: 13px 20px 13px 24px;
+  background-color: white;
+  margin-top: 48px;
+  transition: var(--trn-delay);
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: var(--font-oswald);
+  cursor: pointer;
+}
+.ButtonRegular a, .ButtonRegular i {
+  color: black;
+}
+.ButtonRegular:hover {
+  background-color: var(--clr-accent);
+}
+/* =========Common Typography======= */
+.header-lg {
+  font-family: var(--font-oswald);
+  font-size: 38px;
+  letter-spacing: 7%;
+  font-weight: 600;
+}
+.header-lg-barlow {
+  font-family: var(--font-barlow);
+  font-size: 38px;
+  letter-spacing: 2.5px;
+  font-weight: 600;
+}
+.header-mid {
+  font-family: var(--font-oswald);
+  font-size: 27px;
+  font-weight: 600;
+  letter-spacing: 3%;
+}
+/* =============Navbar============== */
+#navbar {
+  height: 0px;
+}
+.navbarWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 25px;
+}
+.navbarLeft {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 60px;
+}
+.navbarLeft__links ul {
+  display: flex;
+  column-gap: 30px;
+}
+.navbarLeft__links ul li a {
+  color: #DDDDDD;
+}
+.navbarRight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 31px;
+}
+.navbarRight__Signin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 7px;
+}
+.navbarRight__Signin i {
+  font-size: 0.8rem;
+}
+.navbarRight a {
+  color: white;
+}
+.navbarWrapper a {
+  transition: var(--trn-delay);
+}
+.navbarWrapper a:hover {
+  color: var(--clr-accent);
+}
+/* ===========Banner================ */
+#banner {
+  height: 100dvh;
+  background-image: url(images/banner\ 1.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.bannerTextarea {
+  position: absolute;
+  top: 30%;
+}
+.bannerTextarea__Subheader {
+  font-size: 27px;
+  letter-spacing: 3px;
+  font-weight: 400;
+}
+.bannerTextarea__Header {
+  font-size: 60px;
+  position: relative;
+}
+.bannerTextarea__Header::after {
+  content: "";
+  position: absolute;
+  width: 90px;
+  height: 4px;
+  bottom: 17px;
+  margin-left: 25px;
+  background-color: white;
+}
+.bannerTextarea__Paragraph {
+  max-width: 521px;
+}
+.bannerSocial {
+  position: absolute;
+  bottom: 10dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
+}
+.bannerSocial i {
+  padding: 10px;
+  font-size: 20px;
+  background-color: #DDDDDD;
+  border-radius: 50%;
+  transition: var(--trn-delay);
+}
+.bannerSocial a {
+  color: black;
+}
+.bannerSocial i:hover {
+  background-color: var(--clr-accent);
+}
+/* =============Community============= */
+.communityWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  row-gap: 50px;
+  padding: 34px 0 46px 0;
+}
+.communityHeader {
+  max-width: 518px;
+  position: relative;
+}
+.communityHeader::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 3px;
+  bottom: 7px;
+  margin-left: 10px;
+  background-color: var(--clr-accent);
+}
+.communityMiddle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 82px;
+}
+.communityMiddleLeft {
+  position: relative;
+}
+.communityMiddleLeft::before {
+  content: "";
+  position: absolute;
+  width: 157px;
+  height: 157px;
+  background-color: var(--clr-accent);
+  top: -6px;
+  left: -6px;
+  z-index: -1;
+}
+.communityMiddleRight__List {
+  margin: 10px 0;
+}
+.communityMiddleRight__List li {
+  margin: 5px 0;
+  font-size: 18px;
+  font-family: var(--font-barlow);
+}
+.communityMiddleRight__List li::before {
+  content: "✓";
+  color: var(--clr-accent);
+  margin-right: 10px;
+}
+.communityMiddleRight__Paragraph {
+  font-size: 18px;
+  margin: 7px 0;
+}
+.--btnMod1 {
+  background-color: var(--clr-productBG);
+  margin-top: 30px;
+}
+.--btnMod1 a {
+  color: white;
+}
+.--btnMod1 i{
+  color: white;
+}
+.communityAchievements {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+}
+.communityAchievementsItem {
+  width: 315px;
+  height: 170px;
+  background-image: url(images/achievement-rect.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 27px 0;
+  row-gap: 18px;
+}
+.communityAchievementsitem__Header {
+  font-size: 60px;
+  font-family: var(--font-barlow);
+  letter-spacing: 2px;
+  font-weight: 600;
+  line-height: 100%;
+}
+.communityAchievementsitem__Header::after {
+  content: ".";
+  font-size: 75px;
+  color: var(--clr-accent);
+}
+.communityAchievementsitem__details {
+  font-weight: 300;
+  letter-spacing: 2%;
+  font-size: 18px;
+}
+/* ===========Popular================ */
+#popular {
+  background-color: var(--clr-lessDark);
+
+}
+.popularWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 90px 0;
+  position: relative;
+}
+.popularWrapper img {
+  cursor: pointer;
+  transition: var(--trn-delay);
+}
+.popularWrapper img:hover {
+  scale: 1.05;
+}
+.popularRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+  row-gap: 80px;
+}
+.popularRight__Header {
+  max-width: 454px;
+  text-align: right;
+  position: relative;
+}
+.popularRight__Header::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 3px;
+  bottom: 7px;
+  right: 8rem;
+  background-color: var(--clr-accent);
+}
+.popularNavBtn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+  position: absolute;
+  right: 0;
+  transform: translateY(-22px);
+}
+.popularNavBtn i {
+  font-size: 1.2rem;
+  padding: 10px 12px;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 50%;
+  transition: var(--trn-delay);
+}
+.popularNavBtn a {
+  color: white;
+}
+.popularNavBtn i:hover {
+  background-color: var(--clr-accent);
+  border: 2px solid var(--clr-accent);
+}
+/* ============Tournament============= */
+#tournament {
+  padding: 85px 0;
+}
+
+.tournamentTop {
+  display: flex;
+  flex-direction: column;
+  row-gap: 78px;
+}
+.tournamentTopHeader {
+  max-width: 500px;
+}
+.tournamentTopVideos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.VideosThumbnail {
+  width: 427px;
+  height: 275px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: saturate(0);
+  transition: var(--trn-delay);
+  cursor: pointer;
+  position: relative;
+}
+.VideosThumbnail:hover {
+  filter: saturate(1);
+  scale: 1.05;
+}
+
+.ThumbnailPlay {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.ThumbnailPlay i {
+  font-size: 1.2rem;
+  padding: 1rem;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 50%;
+  transition: var(--trn-delay);
+}
+.ThumbnailPlay i:hover {
+  background-color: rgba(255, 70, 86, 0.63);
+}
+.ThumbnailTextWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+}
+.VideosThumbnailText__title {
+  font-weight: 500;
+  font-family: var(--font-barlow);
+  text-transform: uppercase;
+}
+.VideosThumbnailLive {
+  position: relative;
+}
+.VideosThumbnailLive::before {
+  content: ".";
+  position: absolute;
+  font-size: 3rem;
+  color: var(--clr-accent);
+  line-height: 0;
+  left: -10px;
+  bottom: 32px;
+}
+.tournamentBottom {
+  padding-top: 61px;
+  width: 1096px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 59px;
+}
+.tournamentBottomHeader {
+  font-family: var(--font-barlow);
+  font-weight: 400;
+  font-size: 25px;
+  letter-spacing: 2.5px;
+}
+.tournamentMatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tournamentMatchTeam {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 118px;
+  width: 426px;
+  background-image: url(images/leftteam.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 5px;
+}
+.--Team2 {
+  background-image: url(images/right-team.png);
+}
+.--Team2 p {
+  margin-left: 4rem;
+}
+.tournamentMatchTeam__Name {
+  font-size: 32px;
+  margin-right: 4rem;
+}
+.tournamentMatchScores {
+  font-size: 40px;
+  letter-spacing: 5px;
+  margin: 0 80px;
+}
+/* ============Sales================= */
+.blackFridaySale {
+  position: relative;
+}
+.blackFridaySaleWrapper {
+  transform: translateY(160px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 60px;
+}
+.blackFridaySale__Header {
+  position: absolute;
+  right: 0;
+}
+.blackFridaySale__Header::after {
+  transform: translateX(2.5rem);
+}
+.blackFridaySaleItem {
+  width: 315px;
+  height: 568px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  position: relative;
+  cursor: pointer;
+}
+.addBtn i{
+  position: absolute;
+  padding: 5px;
+  background-color: var(--clr-accent);
+  border: 1px solid white;
+  border-radius: 50%;
+  right: 20px;
+  top: 30px;
+  opacity: 0;
+  transition: var(--trn-delay);
+}
+.blackFridaySaleItem:hover .addBtn i {
+  opacity: 1;
+}
+.blackFridaySaleItem__title {
+  font-family: var(--font-barlow);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+.blackFridaySaleItems__publisher {
+  color: #666666;
+  letter-spacing: 1.6px;
+}
+.discountLabel {
+  padding: 10px;
+  background-color: var(--clr-accent);
+  color: white;
+}
+.blackFridaySaleItem__Price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+}
+.priceBefore {
+  color: #666666;
+}
+.catalogueIntro {
+  font-family: var(--font-barlow);
+  font-weight: 500;
+  font-size: 20px;
+  padding-bottom: 30px;
+}
+.catalogue {
+  margin-top: 150px;
+}
+.catalogueWrapper {
+  padding: 45px;
+  background-color: var(--clr-productBG);
+  display: flex;
+  justify-content: space-between;
+  height: 454px;
+}
+.catalogueLeft {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  row-gap: 25px;
+}
+.catalogueLeft__subHeader {
+  color: var(--clr-accent);
+  letter-spacing: 1.6px;
+}
+.catalogueLeft__Header {
+  text-transform: uppercase;
+}
+.catalogueLeft__paragraph {
+  font-weight: 600;
+  color: #666666;
+}
+.--btnMod2 {
+  background-color: var(--clr-deepDark);
+  margin-top: 0;
+}
+.--btnMod2 a {
+  color: white;
+}
+.catalogueRight {
+  position: relative;
+}
+.catalogueRight__pic {
+  position: absolute;
+  box-shadow: var(--box-shd);
+}
+.--pic1 {
+  left: -425px;
+  z-index: 10;
+}
+.--pic2 {
+  left: -475px;
+  top: 20px;
+  z-index: 5;
+}
+.--pic3 {
+  left: -335px;
+  top: 25px;
+  z-index: 5;
+}
+.--pic4 {
+  left: -525px;
+  top: 32px;
+  z-index: 2;
+}
+.--pic5 {
+  left: -275px;
+  top: 38px;
+}
